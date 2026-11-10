@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spanish Unit 2 – Reflexive Verbs Review & Test</title>
+<style>
+:root{color-scheme:light;
+  --bg:#faf7f2; --card:#fff; --ink:#1f2328; --muted:#6b7280; --line:#e7e2d9;
+  --accent:#b4235a; --accent-soft:#fbe7ef; --ok:#15803d; --ok-soft:#e7f6ec;
+  --bad:#c2410c; --bad-soft:#fdeee5; --warn:#a16207; --warn-soft:#fdf6dd; --blue:#1d4ed8;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.45}
+header{background:var(--accent);color:#fff;padding:16px 18px 0}
+header h1{margin:0;font-size:20px}
+header p{margin:2px 0 12px;opacity:.9;font-size:14px}
+nav{display:flex;gap:4px}
+nav button{flex:1;border:0;background:rgba(255,255,255,.15);color:#fff;padding:10px 6px;font-size:15px;font-weight:600;border-radius:10px 10px 0 0;cursor:pointer}
+nav button.on{background:var(--bg);color:var(--accent)}
+main{max-width:760px;margin:0 auto;padding:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:14px}
+h2{font-size:18px;margin:0 0 8px}
+h3{font-size:16px;margin:12px 0 6px}
+.muted{color:var(--muted);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.verb{color:var(--ink);-webkit-text-fill-color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:10px;background:#fff;cursor:pointer;text-align:left;font:inherit}
+.verb:hover{border-color:var(--accent)}
+.verb .e{font-size:26px}
+.verb b{display:block;font-size:17px;color:var(--ink)}
+.verb span{font-size:13px;color:var(--muted);-webkit-text-fill-color:var(--muted)}
+.verb.rev{border-color:var(--ok);background:var(--ok-soft)}
+.verb.rev span{color:var(--ok);-webkit-text-fill-color:var(--ok);font-weight:600}
+.badge{display:inline-block;font-size:11px;font-weight:700;padding:1px 7px;border-radius:99px;background:var(--warn-soft);color:var(--warn);margin-top:4px}
+.badge.irr{background:#ede9fe;color:#6d28d9}
+table.conj{width:100%;border-collapse:collapse;margin-top:8px}
+table.conj td{border-bottom:1px solid var(--line);padding:8px 6px;font-size:16px}
+table.conj td.p{color:var(--muted);width:42%}
+table.conj td.f{font-weight:600}
+.pr{color:var(--accent)}
+.stem{background:var(--warn-soft);border-radius:4px;padding:0 2px}
+.hl{outline:2px solid var(--bad);border-radius:6px}
+.cover td.f{cursor:pointer}
+.cover td.f.hid{color:transparent;background:repeating-linear-gradient(45deg,#f0ebe3,#f0ebe3 6px,#f7f3ed 6px,#f7f3ed 12px);border-radius:6px}
+.btn{display:inline-block;border:0;border-radius:10px;padding:12px 18px;font-size:16px;font-weight:700;cursor:pointer;background:var(--accent);color:#fff}
+.btn.sec{background:#fff;color:var(--accent);border:2px solid var(--accent)}
+.btn.small{padding:7px 12px;font-size:14px}
+.btn:disabled{opacity:.4;cursor:default}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.dots{display:flex;gap:8px;margin:8px 0}
+.dot{flex:1;border:2px solid var(--line);border-radius:10px;padding:8px;text-align:center;font-size:13px;background:#fff}
+.dot b{display:block;font-size:18px}
+.dot.cur{border-color:var(--accent)}
+.dot.perfect{border-color:var(--ok);background:var(--ok-soft)}
+.q{font-size:22px;margin:10px 0 4px}
+.q .blank{display:inline-block;min-width:90px;border-bottom:3px solid var(--accent)}
+.qhint{color:var(--muted);font-size:15px}
+input.ans{color:var(--ink);background:#fff;width:100%;font-size:22px;padding:12px;border:2px solid var(--line);border-radius:10px;margin-top:10px}
+input.ans:focus{outline:none;border-color:var(--accent)}
+.acc{display:flex;gap:6px;margin:8px 0;flex-wrap:wrap}
+.acc button{color:var(--ink);font-size:18px;width:42px;height:40px;border:1px solid var(--line);border-radius:8px;background:#fff;cursor:pointer}
+.fb{border-radius:10px;padding:12px;margin-top:10px;font-size:16px}
+.fb.ok{background:var(--ok-soft);color:var(--ok)}
+.fb.bad{background:var(--bad-soft);color:var(--bad)}
+.fb.warn{background:var(--warn-soft);color:var(--warn)}
+.progress{height:8px;background:var(--line);border-radius:99px;overflow:hidden;margin:6px 0 2px}
+.progress div{height:100%;background:var(--accent);transition:width .3s}
+.big{font-size:44px;font-weight:800;margin:4px 0}
+ul.miss{padding-left:18px}
+ul.miss li{margin:4px 0}
+.set{display:flex;gap:16px;flex-wrap:wrap;font-size:14px}
+.set label{display:flex;gap:6px;align-items:center}
+.rule{background:var(--accent-soft);border-radius:10px;padding:10px 12px;margin:8px 0;font-size:15px}
+.hidden{display:none}
+.streak{display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--line);margin-right:3px}
+.streak.on{background:var(--ok)}
+.hist{font-size:14px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Desafío 2 · Los verbos reflexivos</h1>
+  <p>La higiene personal y la rutina diaria</p>
+  <nav>
+    <button data-tab="review" class="on">1 · Review</button>
+    <button data-tab="test">2 · Test</button>
+    <button data-tab="practice">3 · Practice</button>
+  </nav>
+</header>
+<main>
+  <section id="review"></section>
+  <section id="test" class="hidden"></section>
+  <section id="practice" class="hidden"></section>
+</main>
+
+<script>
+/* ---------- DATA ---------- */
+const P = [
+  {k:'yo',      lab:'yo',                     pron:'me',  subj:['Yo']},
+  {k:'tu',      lab:'tú',                     pron:'te',  subj:['Tú']},
+  {k:'el',      lab:'él / ella / usted',      pron:'se',  subj:['Janet','Andy','Usted','Mi mamá']},
+  {k:'nos',     lab:'nosotros / nosotras',    pron:'nos', subj:['Nosotros','Andy y yo','Diana y yo']},
+  {k:'vos',     lab:'vosotros / vosotras',    pron:'os',  subj:['Vosotros','Vosotras']},
+  {k:'ellos',   lab:'ellos / ellas / ustedes',pron:'se',  subj:['Janet y Andy','Ellas','Ustedes','Mis hermanos']}
+];
+const V = [
+  // from the pictures on page 1
+  {inf:'ducharse',   en:'to shower',                 e:'🚿', g:'pic', f:['ducho','duchas','ducha','duchamos','ducháis','duchan'], c:'por la noche', cs:['por la noche','por la mañana','con agua caliente']},
+  {inf:'bañarse',    en:'to take a bath',            e:'🛁', g:'pic', f:['baño','bañas','baña','bañamos','bañáis','bañan'], c:'en el jacuzzi', cs:['en el jacuzzi','los sábados','con jabón de frutas']},
+  {inf:'lavarse',    en:'to wash (oneself) — lavarse la cara',  e:'🧼', g:'pic', f:['lavo','lavas','lava','lavamos','laváis','lavan'], c:'la cara', cs:['la cara','las manos','la cara con agua mineral'], alt:['lavarse la cara']},
+  {inf:'cepillarse', en:'to brush — cepillarse los dientes',     e:'🪥', g:'pic', f:['cepillo','cepillas','cepilla','cepillamos','cepilláis','cepillan'], c:'los dientes', cs:['los dientes','los dientes después de comer','el pelo'], alt:['cepillarse los dientes']},
+  {inf:'maquillarse',en:'to put on makeup',          e:'💄', g:'pic', f:['maquillo','maquillas','maquilla','maquillamos','maquilláis','maquillan'], c:'para la fiesta', cs:['para la fiesta','antes de la escuela','en el baño']},
+  {inf:'afeitarse',  en:'to shave',                  e:'🪒', g:'pic', f:['afeito','afeitas','afeita','afeitamos','afeitáis','afeitan'], c:'con crema de afeitar', cs:['con crema de afeitar','todos los días','por la mañana']},
+  {inf:'peinarse',   en:'to comb one\'s hair',       e:'💇', g:'pic', f:['peino','peinas','peina','peinamos','peináis','peinan'], c:'con el peine', cs:['con el peine','antes de salir','con el cepillo']},
+  {inf:'vestirse',   en:'to get dressed',            e:'👕', g:'pic', f:['visto','vistes','viste','vestimos','vestís','visten'], c:'para la excursión', cs:['para la excursión','con ropa cómoda','muy rápido'], sc:{t:'e→i',a:'vest',b:'vist'}},
+  // routine reflexive verbs (page 3)
+  {inf:'despertarse',en:'to wake up',                e:'⏰', g:'rut', f:['despierto','despiertas','despierta','despertamos','despertáis','despiertan'], c:'a las seis de la mañana', cs:['a las seis de la mañana','tarde los sábados','de buen humor'], sc:{t:'e→ie',a:'despert',b:'despiert'}},
+  {inf:'levantarse', en:'to get up',                 e:'🌅', g:'rut', f:['levanto','levantas','levanta','levantamos','levantáis','levantan'], c:'a las siete', cs:['a las siete','temprano','a las siete y media']},
+  {inf:'acostarse',  en:'to go to bed',              e:'🛏️', g:'rut', f:['acuesto','acuestas','acuesta','acostamos','acostáis','acuestan'], c:'muy tarde', cs:['muy tarde','a las diez','temprano los lunes'], sc:{t:'o→ue',a:'acost',b:'acuest'}},
+  {inf:'dormirse',   en:'to go to sleep',            e:'😴', g:'rut', f:['duermo','duermes','duerme','dormimos','dormís','duermen'], c:'en el sofá', cs:['en el sofá','en la clase','muy pronto'], sc:{t:'o→ue',a:'dorm',b:'duerm'}},
+  {inf:'ponerse',    en:'to put on (deodorant, clothes, perfume)', e:'🧴', g:'rut', f:['pongo','pones','pone','ponemos','ponéis','ponen'], c:'desodorante', cs:['desodorante','perfume','la chaqueta'], irr:'yo form is irregular: me pongo'},
+  // vocabulario adicional (worksheet)
+  {inf:'quitarse',   en:'to take off',               e:'🧥', g:'extra', f:['quito','quitas','quita','quitamos','quitáis','quitan'], c:'los zapatos', cs:['los zapatos','la chaqueta','la ropa']},
+  {inf:'secarse',    en:'to dry off',                e:'🧻', g:'extra', f:['seco','secas','seca','secamos','secáis','secan'], c:'con la toalla', cs:['con la toalla','el pelo','las manos']}
+];
+const INF_LEAD = ['Yo quiero','Tú tienes que','Janet necesita','Nosotros vamos a','Vosotros preferís','Ellos quieren'];
+const TEST_LEN = 20, ROUND = 3;
+
+/* ---------- STATE ---------- */
+let S = load() || {vos:true, strict:false, testNo:1, history:[], missed:[], practice:null, practiced:false};
+function save(){ try{localStorage.setItem('sp-u2',JSON.stringify(S))}catch(e){} }
+function load(){ try{return JSON.parse(localStorage.getItem('sp-u2'))}catch(e){return null} }
+let T = null; // live test
+
+/* ---------- HELPERS ---------- */
+const $ = s=>document.querySelector(s);
+const rnd = a=>a[Math.floor(Math.random()*a.length)];
+const shuffle = a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const persons = ()=> S.vos ? [0,1,2,3,4,5] : [0,1,2,3,5];
+const form = (v,p)=> P[p].pron+' '+V[v].f[p];
+const attached = (v,p)=> V[v].inf.slice(0,-2)+P[p].pron;
+const norm = s=>s.toLowerCase().replace(/[¿?¡!.,]/g,'').replace(/\s+/g,' ').trim();
+const strip = s=>s.normalize('NFD').replace(/[̀-ͯ]/g,'');
+function esc(s){return s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))}
+
+function makeQ(id){
+  const [t,vs,ps] = id.split('|'); const v=+vs, p=+ps, VB=V[v];
+  if(t==='mean') return {id,t,v,p:-1,html:`${VB.e} How do you say <b>“${VB.en.split(' — ')[0]}”</b>?`,hint:'Write the reflexive infinitive (ends in -se).',ans:[VB.inf,...(VB.alt||[])],show:VB.inf};
+  if(t==='conj') return {id,t,v,p,html:`<b>${P[p].lab.split(' / ')[0]}</b> + <b>${VB.inf}</b> ${VB.e}`,hint:'Write the pronoun + verb (e.g. me lavo).',ans:[form(v,p)],show:form(v,p)};
+  if(t==='sent'){ const sj=rnd(P[p].subj), ctx=rnd(VB.cs||[VB.c]); return {id,t,v,p,html:`${sj} <span class="blank">&nbsp;</span> ${ctx}.`,hint:`(${VB.inf}) ${VB.e}`,ans:[form(v,p)],show:form(v,p),full:`${sj} ${form(v,p)} ${ctx}.`}; }
+  if(t==='inf') return {id,t,v,p,html:`${INF_LEAD[p]} <span class="blank">&nbsp;</span> ${VB.c}.`,hint:`(${VB.inf}) — attach the pronoun to the infinitive`,ans:[attached(v,p)],show:attached(v,p),full:`${INF_LEAD[p]} ${attached(v,p)} ${VB.c}.`};
+}
+
+function check(q,given){
+  const g=norm(given);
+  if(!g) return {ok:false,msg:'Type an answer.'};
+  for(const a of q.ans){
+    if(g===norm(a)) return {ok:true};
+    if(!S.strict && strip(g)===strip(norm(a))) return {ok:true,accent:true};
+  }
+  return {ok:false,msg:diagnose(q,g)};
+}
+function diagnose(q,g){
+  if(q.t==='mean') return '';
+  const VB=V[q.v], p=q.p, correct=q.ans[0], gs=strip(g);
+  if(q.t==='inf'){
+    if(gs.startsWith(strip(P[p].pron)+' ')) return 'With an infinitive, attach the pronoun to the END: '+correct+'.';
+    if(gs===strip(VB.inf)) return `Change “se” to match the subject: ${correct}.`;
+    return '';
+  }
+  const words=gs.split(' ');
+  const verbPart=words[words.length-1], pronPart=words.length>1?words[0]:'';
+  if(words.length===1) return strip(VB.f[p])===gs ? `Don't forget the reflexive pronoun “${P[p].pron}”!` : 'Remember: pronoun + verb.';
+  if(strip(VB.f[p])===verbPart && pronPart!==P[p].pron) return `Verb is right — the pronoun for ${P[p].lab} is “${P[p].pron}”.`;
+  if(VB.sc){
+    const a=strip(VB.sc.a), b=strip(VB.sc.b);
+    if((p===3||p===4) && verbPart.startsWith(b)) return `No stem change for nosotros/vosotros: ${correct}.`;
+    if(!(p===3||p===4) && verbPart.startsWith(a)) return `Stem change ${VB.sc.t}! (${VB.sc.a} → ${VB.sc.b})`;
+  }
+  if(VB.irr && p===0) return 'Irregular yo form: me pongo.';
+  return '';
+}
+
+function tableHTML(v,{cover=false,hlP=null}={}){
+  const VB=V[v];
+  let rows=persons().map(p=>{
+    let vf=VB.f[p];
+    if(VB.sc && p!==3 && p!==4) vf=vf.replace(VB.sc.b,`<span class="stem">${VB.sc.b}</span>`);
+    if(VB.irr && p===0) vf=`<span class="stem">${vf}</span>`;
+    return `<tr><td class="p">${P[p].lab}</td><td class="f${cover?' hid':''}${hlP===p?' hl':''}"><span class="pr">${P[p].pron}</span> ${vf}</td></tr>`;
+  }).join('');
+  return `<table class="conj${cover?' cover':''}">${rows}</table>`;
+}
+function badges(VB){
+  return (VB.sc?`<span class="badge">${VB.sc.t}</span> `:'')+(VB.irr?'<span class="badge irr">irregular yo</span>':'');
+}
+
+/* ---------- TABS ---------- */
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>tab(b.dataset.tab));
+function tab(name){
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.tab===name));
+  ['review','test','practice'].forEach(s=>$('#'+s).classList.toggle('hidden',s!==name));
+  ({review:renderReview,test:renderTestHome,practice:renderPractice})[name]();
+  window.scrollTo(0,0);
+}
+
+/* ---------- REVIEW ---------- */
+let reviewOpen=null, reviewCover=false; const revealed=new Set();
+function renderReview(){
+  const card=(i)=>{const VB=V[i], r=revealed.has(i);return `<button class="verb${r?' rev':''}" data-v="${i}"><div class="e">${VB.e}</div><b>${VB.inf}</b><span>${r?'🇺🇸 '+VB.en:'Tap to check meaning'}</span><div>${badges(VB)}</div></button>`};
+  $('#review').innerHTML=`
+  <div class="card">
+    <h2>How reflexive verbs work</h2>
+    <div class="rule">The action goes back to the subject: <b>Juan se lava</b> = Juan washes <i>himself</i>.</div>
+    <div class="rule">Pronouns: <b>me · te · se · nos · os · se</b> — one for each person.</div>
+    <div class="rule">Where it goes:<br>• <b>In front of</b> the conjugated verb → <b>Yo me lavo.</b><br>• <b>Attached</b> to the end of an infinitive → <b>Quiero lavarme.</b></div>
+    <div class="rule">Stem changers change in every form <b>except nosotros & vosotros</b>:<br>despertarse (e→ie) · acostarse (o→ue) · dormirse (o→ue) · vestirse (e→i)</div>
+    <div class="set" style="margin-top:10px">
+      <label><input type="checkbox" id="optVos" ${S.vos?'checked':''}> Include vosotros</label>
+      <label><input type="checkbox" id="optStrict" ${S.strict?'checked':''}> Require accents</label>
+    </div>
+  </div>
+  <div class="card">
+    <h2>📸 Verbs from the pictures (p. 48)</h2>
+    <div class="row" style="justify-content:space-between"><p class="muted" style="margin:0">Say what each verb means in English, then tap it to check and see its conjugation.</p>
+    ${revealed.size?'<button class="btn small sec" id="hideMeanBtn">Hide meanings again</button>':''}</div>
+    <div class="grid">${V.map((_,i)=>i).filter(i=>V[i].g==='pic').map(card).join('')}</div>
+    <h2 style="margin-top:16px">⏰ Routine reflexive verbs (p. 50)</h2>
+    <div class="grid">${V.map((_,i)=>i).filter(i=>V[i].g==='rut').map(card).join('')}</div>
+    <h2 style="margin-top:16px">➕ Vocabulario adicional (worksheet)</h2>
+    <div class="grid">${V.map((_,i)=>i).filter(i=>V[i].g==='extra').map(card).join('')}</div>
+  </div>
+  <div class="card ${reviewOpen===null?'hidden':''}" id="revTable">
+    ${reviewOpen!==null?`<div class="row" style="justify-content:space-between"><h2>${V[reviewOpen].e} ${V[reviewOpen].inf} <span class="muted">= ${V[reviewOpen].en}</span></h2>
+      <button class="btn small sec" id="coverBtn">${reviewCover?'Show all':'Hide answers (self-quiz)'}</button></div>
+      ${badges(V[reviewOpen])}
+      ${tableHTML(reviewOpen,{cover:reviewCover})}
+      <p class="muted">Example: ${P[0].subj[0]} ${form(reviewOpen,0)} ${V[reviewOpen].c}. · Quiero ${attached(reviewOpen,0)} ${V[reviewOpen].c}.</p>
+      ${reviewCover?'<p class="muted">Say each form out loud, then tap the box to check.</p>':''}`:''}
+  </div>
+  <div class="card row"><button class="btn" onclick="tab('test')">I'm ready → Start the test</button></div>`;
+  const hm=$('#hideMeanBtn'); if(hm) hm.onclick=()=>{revealed.clear();reviewOpen=null;renderReview()};
+  document.querySelectorAll('.verb').forEach(b=>b.onclick=()=>{reviewOpen=+b.dataset.v;revealed.add(reviewOpen);renderReview();$('#revTable').scrollIntoView({behavior:'smooth'})});
+  const cb=$('#coverBtn'); if(cb) cb.onclick=()=>{reviewCover=!reviewCover;renderReview()};
+  document.querySelectorAll('.cover td.f').forEach(td=>td.onclick=()=>td.classList.remove('hid'));
+  $('#optVos').onchange=e=>{S.vos=e.target.checked;save();renderReview()};
+  $('#optStrict').onchange=e=>{S.strict=e.target.checked;save()};
+}
+
+/* ---------- TEST ---------- */
+function dotsHTML(){
+  const n=Math.max(ROUND,S.testNo);
+  let h='<div class="dots">';
+  for(let i=1;i<=n;i++){
+    const r=S.history.find(x=>x.n===i);
+    h+=`<div class="dot ${i===S.testNo&&!r?'cur':''} ${r&&r.score===r.total?'perfect':''}">Test ${i}<b>${r?Math.round(100*r.score/r.total)+'%':'—'}</b></div>`;
+  }
+  return h+'</div>';
+}
+function renderTestHome(){
+  if(T) return renderQ();
+  const last=S.history[S.history.length-1];
+  const perfect=last && last.score===last.total;
+  const needPractice=S.missed.length>0 && !S.practiced;
+  let body;
+  if(perfect) body=`<div class="big">🎉 100%!</div><p>Test ${last.n} was perfect — you've mastered Unit 2 reflexive verbs. ¡Excelente!</p>
+     <button class="btn sec" id="resetBtn">Start a fresh round</button>`;
+  else if(needPractice) body=`<p>Before Test ${S.testNo}, practice the <b>${S.missed.length}</b> item(s) you missed until you get each one right <b>twice in a row</b>.</p>
+     <button class="btn" onclick="tab('practice')">Go to Practice</button>`;
+  else body=`<p>${S.testNo>ROUND?`Bonus round — keep going until you hit 100%.`:`Test ${S.testNo} of ${ROUND}.`} ${TEST_LEN} fill-in-the-blank sentences — write the conjugated verb with its pronoun.${S.history.length?' Your missed items from last time are mixed in.':''}</p>
+     <button class="btn" id="startBtn">Start Test ${S.testNo}</button>`;
+  $('#test').innerHTML=`<div class="card"><h2>Tests</h2><p class="muted">Goal: 100%. Take a test → practice what you missed → take the next test. Repeat until perfect.</p>${dotsHTML()}${body}</div>
+   ${S.history.length?`<div class="card hist"><h3>History</h3>${S.history.map(h=>`Test ${h.n}: ${h.score}/${h.total} · ${h.date}`).join('<br>')}<div style="margin-top:10px"><button class="btn small sec" id="resetBtn2">Reset everything</button></div></div>`:''}`;
+  const sb=$('#startBtn'); if(sb) sb.onclick=startTest;
+  [$('#resetBtn'),$('#resetBtn2')].forEach(b=>b&&(b.onclick=resetAll));
+}
+let confirmReset=false;
+function resetAll(e){
+  if(!confirmReset){confirmReset=true;e.target.textContent='Tap again to confirm reset';return}
+  confirmReset=false;
+  S={vos:S.vos,strict:S.strict,testNo:1,history:[],missed:[],practice:null,practiced:false};save();T=null;renderTestHome();
+}
+function buildTest(){
+  const ps=persons();
+  const ids=new Set();
+  // carry forward missed items (fresh variants of the same verb+person)
+  S.missed.forEach(id=>{const [t,v,p]=id.split('|');
+    ids.add(`sent|${v}|${ps.includes(+p)?p:rnd(ps)}`);
+  });
+  // make sure every verb shows up
+  for(const v of shuffle(V.map((_,i)=>i))){
+    if(ids.size>=TEST_LEN) break;
+    if([...ids].some(id=>id.split('|')[1]==String(v))) continue;
+    ids.add(newId(v,ps));
+  }
+  let guard=0;
+  while(ids.size<TEST_LEN && guard++<500) ids.add(newId(Math.floor(Math.random()*V.length),ps));
+  return shuffle([...ids]).slice(0,Math.max(TEST_LEN,S.missed.length));
+}
+function newId(v,ps){ return `sent|${v}|${rnd(ps)}`; }
+function startTest(){
+  T={mode:'test',ids:buildTest(),i:0,score:0,wrong:[],answered:false};
+  T.q=makeQ(T.ids[0]);
+  renderQ();
+}
+function accentBar(){return `<div class="acc">${['á','é','í','ó','ú','ñ'].map(c=>`<button type="button" data-c="${c}">${c}</button>`).join('')}</div>`}
+function wireAccents(){
+  document.querySelectorAll('.acc button').forEach(b=>b.onclick=()=>{
+    const inp=$('#ans'); const s=inp.selectionStart??inp.value.length;
+    inp.value=inp.value.slice(0,s)+b.dataset.c+inp.value.slice(inp.selectionEnd??s);
+    inp.focus(); inp.setSelectionRange(s+1,s+1);
+  });
+}
+function renderQ(){
+  const q=T.q, n=T.ids.length;
+  $('#test').innerHTML=`<div class="card">
+    <div class="row" style="justify-content:space-between"><b>Test ${S.testNo}</b><span class="muted">${T.i+1} / ${n} · ✅ ${T.score}</span></div>
+    <div class="progress"><div style="width:${100*T.i/n}%"></div></div>
+    <div class="q">${q.html}</div><div class="qhint">${q.hint}</div>
+    <form id="f"><input id="ans" class="ans" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Type here…">
+    ${accentBar()}
+    <div id="fb"></div>
+    <div class="row" style="margin-top:10px"><button class="btn" id="go">Check</button></div></form>
+  </div>`;
+  wireAccents();
+  $('#ans').focus();
+  $('#f').onsubmit=e=>{e.preventDefault(); T.answered?nextQ():submitTest()};
+}
+function submitTest(){
+  const q=T.q, r=check(q,$('#ans').value);
+  if(!r.ok && r.msg==='Type an answer.'){ $('#fb').innerHTML=`<div class="fb warn">${r.msg}</div>`; return }
+  T.answered=true; $('#ans').readOnly=true;
+  if(r.ok){ T.score++; $('#fb').innerHTML=`<div class="fb ${r.accent?'warn':'ok'}">✅ Correct!${r.accent?` Watch the accents: <b>${q.show}</b>`:''}</div>`; }
+  else { T.wrong.push({id:q.id,given:$('#ans').value,show:q.show,v:q.v});
+    $('#fb').innerHTML=`<div class="fb bad">❌ Answer: <b>${q.show}</b>${q.full?`<br><span class="muted">${q.full}</span>`:''}${r.msg?`<br>💡 ${r.msg}`:''}</div>`; }
+  $('#go').textContent=T.i+1<T.ids.length?'Next →':'See results';
+  $('#go').focus();
+}
+function nextQ(){
+  T.i++; T.answered=false;
+  if(T.i>=T.ids.length) return finishTest();
+  T.q=makeQ(T.ids[T.i]); renderQ();
+}
+function finishTest(){
+  const total=T.ids.length, sc=T.score, pct=Math.round(100*sc/total);
+  S.history.push({n:S.testNo,score:sc,total,date:new Date().toLocaleDateString()});
+  S.missed=[...new Set(T.wrong.map(w=>w.id))];
+  S.practiced=false; S.practice=null; S.testNo++;
+  save();
+  const wrong=T.wrong; T=null;
+  $('#test').innerHTML=`<div class="card"><h2>Test ${S.testNo-1} results</h2>
+    <div class="big">${pct}%</div><p>${sc} / ${total} correct</p>${dotsHTML()}
+    ${pct===100?`<p>🎉 Perfect score! ¡Fantástico!</p>`:
+      `<h3>To practice</h3><ul class="miss">${wrong.map(w=>`<li>${V[w.v].e} <b>${w.show}</b> <span class="muted">(you wrote: ${esc(w.given)||'—'})</span></li>`).join('')}</ul>
+       <button class="btn" onclick="tab('practice')">Practice these now →</button>`}
+  </div>`;
+}
+
+/* ---------- PRACTICE ---------- */
+let PQ=null; // live practice question
+function initPractice(){
+  S.practice={items:S.missed.map(id=>({id,streak:0})),studied:false,last:null};save();
+}
+function renderPractice(){
+  if(!S.missed.length){
+    $('#practice').innerHTML=`<div class="card"><h2>Practice</h2><p>${S.history.length?'Nothing to practice — you got everything right! 🎉':'Take a test first. Anything you miss shows up here to practice until it sticks.'}</p>
+      <button class="btn sec" onclick="tab('${S.history.length?'review':'test'}')">${S.history.length?'Back to Review':'Go to Test'}</button></div>
+      ${freeDrillCard()}`;
+    wireFree(); return;
+  }
+  if(S.practiced){
+    $('#practice').innerHTML=`<div class="card"><h2>✅ Practice complete</h2><p>You got every missed item right twice in a row. You're ready for Test ${S.testNo}.</p><button class="btn" onclick="tab('test')">Take Test ${S.testNo} →</button></div>`;
+    return;
+  }
+  if(!S.practice) initPractice();
+  if(!S.practice.studied) return renderStudy();
+  renderDrill();
+}
+function renderStudy(){
+  const items=S.practice.items.map(it=>it.id.split('|'));
+  const verbs=[...new Set(items.map(x=>+x[1]))];
+  $('#practice').innerHTML=`<div class="card"><h2>Step 1 · Study what you missed</h2>
+    <p class="muted">The forms you missed are outlined in red. Read each table out loud once.</p></div>
+    ${verbs.map(v=>{const VB=V[v]; const missedP=items.filter(x=>+x[1]===v&&x[0]!=='mean').map(x=>+x[2]);
+      return `<div class="card"><h2>${VB.e} ${VB.inf} <span class="muted">— ${VB.en}</span></h2>${badges(VB)}
+      ${tableHTML(v,{hlP:missedP[0]??null})}
+      ${missedP.some(p=>items.some(x=>x[0]==='inf'&&+x[1]===v&&+x[2]===p))?`<div class="rule">With an infinitive: <b>${INF_LEAD[missedP[0]]} ${attached(v,missedP[0])}</b></div>`:''}
+      ${VB.sc?`<div class="rule">Stem change ${VB.sc.t}: <b>${VB.sc.a}</b> → <b>${VB.sc.b}</b> — but NOT in nosotros/vosotros.</div>`:''}
+      ${VB.irr?`<div class="rule">${VB.irr}</div>`:''}</div>`}).join('')}
+    <div class="card"><button class="btn" id="goDrill">Step 2 · Drill them →</button></div>`;
+  $('#goDrill').onclick=()=>{S.practice.studied=true;save();renderDrill();window.scrollTo(0,0)};
+}
+function pickPractice(){
+  const left=S.practice.items.filter(x=>x.streak<2);
+  let pool=left.length>1?left.filter(x=>x.id!==S.practice.last):left;
+  const it=rnd(pool); S.practice.last=it.id;
+  let [t,v,p]=it.id.split('|');
+  if(+p<0 || !persons().includes(+p)) { p=rnd(persons()); it.id=`sent|${v}|${p}`; }
+  const q=makeQ(`sent|${v}|${p}`); q.src=it; return q; // new subject + sentence each time
+}
+function renderDrill(){
+  const items=S.practice.items, done=items.filter(x=>x.streak>=2).length;
+  if(done===items.length){ S.practiced=true; save(); return renderPractice(); }
+  PQ=pickPractice(); PQ.state='ask';
+  $('#practice').innerHTML=`<div class="card">
+    <div class="row" style="justify-content:space-between"><b>Practice before Test ${S.testNo}</b><span class="muted">${done} / ${items.length} mastered</span></div>
+    <div class="progress"><div style="width:${100*done/items.length}%"></div></div>
+    <div class="muted">This one: ${[0,1].map(i=>`<span class="streak ${PQ.src.streak>i?'on':''}"></span>`).join('')} (2 in a row to master)</div>
+    <div class="q">${PQ.html}</div><div class="qhint">${PQ.hint}</div>
+    <form id="pf"><input id="ans" class="ans" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Type here…">
+    ${accentBar()}<div id="fb"></div>
+    <div class="row" style="margin-top:10px"><button class="btn" id="pgo">Check</button></div></form>
+  </div>`;
+  wireAccents(); $('#ans').focus();
+  $('#pf').onsubmit=e=>{e.preventDefault(); drillSubmit()};
+}
+function drillSubmit(){
+  const inp=$('#ans');
+  if(PQ.state==='next'){ save(); return renderDrill(); }
+  if(PQ.state==='retype'){
+    if(check(PQ,inp.value).ok){ PQ.state='next'; $('#fb').innerHTML=`<div class="fb ok">👍 Got it. It'll come back soon.</div>`; $('#pgo').textContent='Next →'; inp.readOnly=true; }
+    else $('#fb').innerHTML+=`<div class="fb warn">Type it exactly: <b>${PQ.show}</b></div>`;
+    return;
+  }
+  const r=check(PQ,inp.value);
+  if(!r.ok && r.msg==='Type an answer.'){ $('#fb').innerHTML=`<div class="fb warn">${r.msg}</div>`; return }
+  if(r.ok){
+    PQ.src.streak++; PQ.state='next'; inp.readOnly=true;
+    $('#fb').innerHTML=`<div class="fb ${r.accent?'warn':'ok'}">✅ ${PQ.src.streak>=2?'Mastered! 🌟':'Correct — one more time later to master it.'}${r.accent?` Accents: <b>${PQ.show}</b>`:''}</div>`;
+    $('#pgo').textContent='Next →';
+  } else {
+    PQ.src.streak=0; PQ.state='retype';
+    $('#fb').innerHTML=`<div class="fb bad">❌ It's <b>${PQ.show}</b>${r.msg?`<br>💡 ${r.msg}`:''}</div>${PQ.p>=0?tableHTML(PQ.v,{hlP:PQ.p}):''}<div class="fb warn">Now type the correct answer to lock it in.</div>`;
+    inp.value=''; inp.focus();
+  }
+  save();
+}
+/* optional free drill on any verb */
+function freeDrillCard(){
+  return `<div class="card"><h2>Extra practice (any verb)</h2><p class="muted">Pick a verb and fill in its whole table.</p>
+  <select id="fv" style="font-size:16px;padding:8px;border-radius:8px">${V.map((VB,i)=>`<option value="${i}">${VB.e} ${VB.inf}</option>`).join('')}</select>
+  <div id="fd"></div></div>`;
+}
+function wireFree(){
+  const sel=$('#fv'); if(!sel) return;
+  const draw=()=>{const v=+sel.value;
+    $('#fd').innerHTML=`<table class="conj">${persons().map(p=>`<tr><td class="p">${P[p].lab}</td><td><input data-p="${p}" class="ans" style="font-size:17px;padding:6px;margin:0" autocomplete="off" autocapitalize="off"></td></tr>`).join('')}</table>
+    <div class="row" style="margin-top:10px"><button class="btn small" id="fchk">Check table</button></div><div id="ffb"></div>`;
+    $('#fchk').onclick=()=>{let ok=0,tot=0;
+      document.querySelectorAll('#fd input').forEach(inp=>{const p=+inp.dataset.p;tot++;
+        const r=check({t:'conj',v,p,ans:[form(v,p)]},inp.value);
+        inp.style.borderColor=r.ok?'var(--ok)':'var(--bad)'; if(r.ok)ok++; else inp.title=form(v,p);});
+      $('#ffb').innerHTML=`<div class="fb ${ok===tot?'ok':'bad'}">${ok}/${tot} correct${ok<tot?tableHTML(v):''}</div>`;};
+  };
+  sel.onchange=draw; draw();
+}
+
+renderReview();
+</script>
+</body>
+</html>
